@@ -2,7 +2,7 @@
 
 ## 🌐 About This Project
 
-A modern, responsive portfolio website showcasing my journey as a Cloud Computing Professional with expertise in AWS services and Linux systems administration. This single-page application highlights my transition from healthcare to IT, technical skills, certifications, and professional experience in cloud technologies.
+A modern, responsive portfolio website showcasing my journey as a Cloud Computing Professional with expertise in AWS services and Linux systems administration. This multi-page application highlights my transition from healthcare to IT, technical skills, certifications, and professional experience in cloud technologies.
 
 ---
 
@@ -25,9 +25,10 @@ This portfolio is built using modern web technologies and AWS cloud services:
 
 ### Design Features
 - **Responsive Design**: Mobile-first approach with breakpoints for all devices
-- **Modern UI/UX**: Dark theme with cyan accent colors and smooth animations
-- **Interactive Elements**: Hover effects, rotating job titles, and dynamic content
-- **Professional Layout**: Clean, minimalist design focused on content
+- **Modern UI/UX**: Dark gradient theme with cyan and green accent colors
+- **Glass Morphism**: Backdrop blur effects and translucent cards
+- **Interactive Elements**: Hover effects, rotating job titles, and smooth animations
+- **Consistent Design System**: Unified styling across all pages
 
 ---
 
@@ -54,11 +55,13 @@ This portfolio is built using modern web technologies and AWS cloud services:
 ## 🚀 Key Features
 
 ### Core Functionality
-- **Multi-page Portfolio**: Comprehensive sections covering all professional aspects
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
-- **Interactive Contact Form**: Direct integration with AWS services for email delivery
-- **Professional Resume**: Direct download link hosted on AWS S3
-- **Social Media Integration**: Links to LinkedIn, GitHub, and Medium profiles
+- **Multi-page Portfolio**: Six dedicated pages covering all professional aspects
+- **Interactive Landing Page**: Hero section with rotating job titles and statistics
+- **Professional Timeline**: Visual qualifications and career progression
+- **Skills Showcase**: Organized tools and platforms with hover effects
+- **Recommendations**: Professional endorsements with download links
+- **Contact Integration**: AWS-powered contact form with real-time feedback
+- **Location Information**: Availability and work preferences
 
 ### Technical Highlights
 - **Serverless Architecture**: Contact form powered by AWS Lambda and API Gateway
@@ -68,10 +71,11 @@ This portfolio is built using modern web technologies and AWS cloud services:
 - **Accessibility**: ARIA labels and keyboard navigation support
 
 ### Interactive Elements
-- **Rotating Job Titles**: Dynamic text animation on the hero section
-- **Hover Effects**: Interactive interest boxes with detailed descriptions
-- **Form Validation**: Client-side and server-side validation for contact form
-- **Smooth Animations**: CSS transitions and transforms for enhanced UX
+- **Rotating Job Titles**: 4 different roles cycling every 3 seconds
+- **Timeline Animation**: Interactive career progression with hover effects
+- **Card Interactions**: Transform animations on all content cards
+- **Form Feedback**: Loading states and success/error notifications
+- **Responsive Navigation**: Mobile-friendly design across all pages
 
 ---
 
@@ -147,10 +151,11 @@ Contact Form → API Gateway → Lambda Function → Amazon SES → Email Delive
 
 ### Color Palette
 - **Primary**: `#00fff7` (Cyan)
-- **Background**: `#111` (Dark Gray)
+- **Secondary**: `#00ff7f` (Green)
+- **Background**: `linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%)`
 - **Text**: `#fff` (White)
-- **Accent**: `#00ff7f` (Green)
-- **Secondary**: `#2980b9` (Blue)
+- **Muted Text**: `#ccc` (Light Gray)
+- **Cards**: `rgba(24, 24, 24, 0.9)` with backdrop blur
 
 ### Typography
 - **Primary Font**: Poppins (Google Fonts)
@@ -180,10 +185,11 @@ fetch(apiEndpoint, {
 ```
 
 ### Performance Optimizations
-- **Minimal Dependencies**: Only Font Awesome for icons
+- **Minimal Dependencies**: Only Font Awesome and Google Fonts
 - **Optimized Images**: Compressed profile and background images
-- **Efficient CSS**: Single stylesheet with mobile-first approach
-- **Fast Loading**: No external frameworks or heavy libraries
+- **Efficient CSS**: Individual stylesheets per page for optimal loading
+- **Fast Loading**: Pure HTML/CSS/JS with no frameworks
+- **Modern Features**: CSS Grid, Flexbox, and backdrop-filter for performance
 
 ---
 
