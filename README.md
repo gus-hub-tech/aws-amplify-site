@@ -79,15 +79,9 @@ This portfolio is built using modern web technologies and AWS cloud services:
 
 ---
 
-## 📸 Preview
+## Old 📸 Preview [New-below]
 
 https://github.com/user-attachments/assets/036113ef-e119-4c1f-88e8-602a68aeb513
-
----
-
-## 🌐 Live Demo
-
-**Portfolio Website**: [https://main.d3d5cnpn2eqq65.amplifyapp.com](https://main.d3d5cnpn2eqq65.amplifyapp.com)
 
 ---
 
@@ -220,9 +214,12 @@ Contributions and suggestions are welcome! Please feel free to:
 
 ---
 
-## 📄 License
+## 🌐 Live Demo
+<img width="1343" height="307" alt="image" src="https://github.com/user-attachments/assets/d9a3910c-f83d-4117-a31a-a519b3290a80" />
 
-This project is open source and available under the [MIT License](LICENSE).
+https://github.com/user-attachments/assets/600bc41e-ad18-482c-a3cb-e1ba189b3dea
+
+
 
 ---
 
