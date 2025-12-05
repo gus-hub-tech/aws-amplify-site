@@ -1,400 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Qualifications Timeline | Gustav V. Kiewiets</title>
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-  <style>
-    body {
-      background: #f4f6fa;
-      color: #222;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      min-height: 100vh;
-      padding: 0;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      color: #2c3e50;
-    }
-    nav {
-      width: 100%;
-      background: #fff;
-      box-shadow: 0 2px 8px rgba(44,62,80,0.05);
-      margin-bottom: 30px;
-    }
-    nav ul {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      list-style: none;
-      margin: 0;
-      padding: 16px 0;
-    }
-    nav a {
-      color: #2980b9;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.05rem;
-    }
-    nav a:hover {
-      color: #1c5d8c;
-    }
-    .timeline-card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(44,62,80,0.08);
-      padding: 30px 24px 20px 24px;
-      width: 100%;
-      max-width: 100%;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      position: relative;
-    }
-    .timeline-title {
-      text-align: center;
-      color: #00fff7;
-      font-size: 2.1rem;
-      font-weight: 800;
-      margin-bottom: 2.5rem;
-      letter-spacing: 1.5px;
-      text-shadow: 0 2px 12px #00fff799;
-      text-transform: uppercase;
-      width: 100%;
-    }
-    .timeline {
-      position: relative;
-      margin: 0 auto;
-      width: 100%;
-      padding-bottom: 40px;
-    }
-    .timeline::before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 0;
-      transform: translateX(-50%);
-      width: 6px;
-      height: 100%;
-      background: linear-gradient(180deg, #00fff7 0%, #00cfc7 100%);
-      border-radius: 3px;
-      z-index: 1;
-      box-shadow: 0 0 32px #00fff7cc;
-      opacity: 0.7;
-    }
-    .timeline-event {
-      position: relative;
-      width: 50%;
-      padding: 40px 32px;
-      box-sizing: border-box;
-      min-height: 180px;
-      z-index: 2;
-      transition: transform 0.2s;
-    }
-    .timeline-event.right {
-      left: 50%;
-      text-align: left;
-      padding-left: 64px;
-      padding-right: 0;
-    }
-    .timeline-event.left {
-      left: 0;
-      text-align: right;
-      padding-right: 64px;
-      padding-left: 0;
-    }
-    .timeline-event-content {
-      background: rgba(244,246,250,0.98);
-      border: 2.5px solid #00fff7;
-      border-radius: 22px;
-      padding: 28px 36px;
-      box-shadow: 0 0 24px #00fff766, 0 2px 16px #000a;
-      position: relative;
-      z-index: 2;
-      min-width: 260px;
-      max-width: 440px;
-      margin: 0 auto;
-      transition: box-shadow 0.3s, border 0.3s, transform 0.2s;
-      overflow: hidden;
-    }
-    .timeline-event-content:hover {
-      box-shadow: 0 0 48px #00fff7cc, 0 2px 24px #000c;
-      border-color: #00fff7;
-      transform: scale(1.03);
-    }
-    .timeline-event .timeline-year {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 1.3rem;
-      font-weight: 800;
-      color: #00fff7;
-      background: #f4f6fa;
-      padding: 8px 22px;
-      border-radius: 18px;
-      border: 2.5px solid #00fff7;
-      z-index: 3;
-      left: 100%;
-      margin-left: 22px;
-      white-space: nowrap;
-      box-shadow: 0 0 12px #00fff7cc;
-      letter-spacing: 1px;
-      text-shadow: 0 2px 8px #00fff799;
-    }
-    .timeline-event.left .timeline-year {
-      left: auto;
-      right: 100%;
-      margin-left: 0;
-      margin-right: 22px;
-    }
-    .timeline-event-content h3 {
-      margin-top: 0;
-      color: #00fff7;
-      font-size: 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      letter-spacing: 0.5px;
-      font-weight: 700;
-      text-shadow: 0 2px 8px #00fff799;
-    }
-    .timeline-event-content p {
-      margin-bottom: 0;
-      font-size: 1.08rem;
-      color: #222;
-      line-height: 1.6;
-    }
-    .timeline-badge {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 38px;
-      height: 38px;
-      background: #fff;
-      border: 4px solid #00fff7;
-      border-radius: 50%;
-      z-index: 5;
-      box-shadow: 0 0 24px #00fff7cc;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      color: #00fff7;
-      transition: background 0.2s, color 0.2s;
-    }
-    .timeline-event.right .timeline-badge {
-      left: -19px;
-    }
-    .timeline-event.left .timeline-badge {
-      left: auto;
-      right: -19px;
-      transform: translateY(-50%);
-    }
-    .timeline-event-content .tag {
-      display: inline-block;
-      background: #00fff7;
-      color: #181818;
-      font-size: 0.85rem;
-      font-weight: 600;
-      border-radius: 12px;
-      padding: 2px 12px;
-      margin-bottom: 10px;
-      margin-right: 8px;
-      letter-spacing: 0.5px;
-      box-shadow: 0 2px 8px #00fff799;
-    }
-    .btn {
-      background: #2980b9;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      padding: 10px 18px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.2s;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn:hover, .btn:focus {
-      background: #1c5d8c;
-      outline: 2px solid #1c5d8c;
-    }
-    .home-btn {
-      display: block;
-      margin: 40px auto 0 auto;
-      background: #27ae60;
-    }
-    .home-btn:hover, .home-btn:focus {
-      background: #1e8747;
-      outline: 2px solid #1e8747;
-    }
-    @media (max-width: 900px) {
-      .timeline-card {
-        width: 95%;
-        max-width: 420px;
-      }
-      .container {
-        padding: 10px;
-      }
-      .timeline-event,
-      .timeline-event.left,
-      .timeline-event.right {
-        width: 100%;
-        left: 0;
-        text-align: left;
-        padding: 32px 0 32px 48px;
-        min-height: unset;
-      }
-      .timeline-event-content {
-        margin: 0;
-        min-width: unset;
-        max-width: unset;
-      }
-      .timeline-event .timeline-year,
-      .timeline-event.left .timeline-year {
-        left: 0;
-        right: auto;
-        margin-left: 0;
-        margin-right: 0;
-        top: -32px;
-        transform: none;
-      }
-      .timeline-event.right .timeline-badge,
-      .timeline-event.left .timeline-badge {
-        left: -19px;
-        right: auto;
-        transform: translateY(-50%);
-      }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qualifications | Gustav V. Kiewiets</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            background: linear-gradient(45deg, #00fff7, #00ff7f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #00fff7, #00ff7f);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin: 40px 0;
+            width: 45%;
+        }
+        
+        .timeline-item.left {
+            left: 0;
+            text-align: right;
+        }
+        
+        .timeline-item.right {
+            left: 55%;
+            text-align: left;
+        }
+        
+        .timeline-content {
+            background: rgba(24, 24, 24, 0.9);
+            backdrop-filter: blur(20px);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 255, 247, 0.2);
+            padding: 25px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            border-color: #00fff7;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 255, 247, 0.2);
+        }
+        
+        .timeline-year {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #00fff7;
+            color: #111;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .timeline-item.left .timeline-year {
+            right: -60px;
+        }
+        
+        .timeline-item.right .timeline-year {
+            left: -60px;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            top: 50%;
+            width: 12px;
+            height: 12px;
+            background: #00fff7;
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .timeline-item.left .timeline-dot {
+            right: -51px;
+        }
+        
+        .timeline-item.right .timeline-dot {
+            left: -51px;
+        }
+        
+        .timeline-content h3 {
+            color: #00fff7;
+            margin: 0 0 10px 0;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .timeline-item.left h3 {
+            justify-content: flex-end;
+        }
+        
+        .timeline-content p {
+            color: #ccc;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .tag {
+            display: inline-block;
+            background: rgba(0, 255, 247, 0.2);
+            color: #00fff7;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(45deg, #00fff7, #00ff7f);
+            color: #111;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 40px;
+        }
+        
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 255, 247, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 40px auto;
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item,
+            .timeline-item.left,
+            .timeline-item.right {
+                width: 100%;
+                left: 0;
+                text-align: left;
+                padding-left: 50px;
+            }
+            
+            .timeline-dot,
+            .timeline-item.left .timeline-dot,
+            .timeline-item.right .timeline-dot {
+                left: 14px;
+            }
+            
+            .timeline-year,
+            .timeline-item.left .timeline-year,
+            .timeline-item.right .timeline-year {
+                position: static;
+                transform: none;
+                margin-bottom: 10px;
+                display: inline-block;
+            }
+            
+            .timeline-content h3,
+            .timeline-item.left h3 {
+                justify-content: flex-start;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <div class="container">
-    <div class="timeline-card">
-      <div class="timeline-title">Qualifications Timeline</div>
-      <div class="timeline">
-        <!-- CCNA (2025, right) -->
-        <div class="timeline-event right">
-          <div class="timeline-badge"><i class="fa-solid fa-network-wired"></i></div>
-          <div class="timeline-year">2025</div>
-          <div class="timeline-event-content">
-            <span class="tag">Networking</span>
-            <h3><i class="fa-solid fa-certificate"></i>CCNA Certificate</h3>
-            <p>
-              Completed my CCNA (CISCO) Certificate for completing CCNA_2 (Routing and Switching).
-            </p>
-          </div>
+    <div class="container">
+        <h1>Qualifications & Timeline</h1>
+        
+        <div class="timeline">
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2025</div>
+                <div class="timeline-content">
+                    <span class="tag">Networking</span>
+                    <h3><i class="fas fa-network-wired"></i> CCNA Routing & Switching</h3>
+                    <p>Completed CCNA Certificate for CCNA_2 (Routing and Switching) from CISCO.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2025</div>
+                <div class="timeline-content">
+                    <span class="tag">Networking</span>
+                    <h3><i class="fas fa-network-wired"></i> CCNA Introduction</h3>
+                    <p>Completed CCNA Certificate for CCNA_1 (Introduction to Networks) from CISCO.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2024</div>
+                <div class="timeline-content">
+                    <span class="tag">AI/ML</span>
+                    <h3><i class="fas fa-brain"></i> AWS AI/ML Foundations</h3>
+                    <p>Completed AWS AI/ML Foundations course, gaining knowledge in artificial intelligence and machine learning on AWS.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2023</div>
+                <div class="timeline-content">
+                    <span class="tag">Linux</span>
+                    <h3><i class="fab fa-linux"></i> LPIC-1 Certification</h3>
+                    <p>Earned Linux Professional Institute Certification (LPIC-1), demonstrating proficiency in Linux system administration.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2023</div>
+                <div class="timeline-content">
+                    <span class="tag">Cloud</span>
+                    <h3><i class="fab fa-aws"></i> AWS re/Start Graduate</h3>
+                    <p>Graduated from AWS re/Start program, gaining cloud computing skills and understanding core AWS services.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2023</div>
+                <div class="timeline-content">
+                    <span class="tag">Internship</span>
+                    <h3><i class="fas fa-user-tie"></i> Solutions Architect @ Praesignis</h3>
+                    <p>Completed internship as Solutions Architect, focusing on AWS cloud solutions and infrastructure design.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2022</div>
+                <div class="timeline-content">
+                    <span class="tag">Cloud</span>
+                    <h3><i class="fab fa-aws"></i> AWS Cloud Practitioner</h3>
+                    <p>Achieved AWS Certified Cloud Practitioner, establishing solid understanding of AWS cloud services.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2021</div>
+                <div class="timeline-content">
+                    <span class="tag">Internship</span>
+                    <h3><i class="fas fa-user-graduate"></i> IT Internship @ Xgile I.T</h3>
+                    <p>First IT internship gaining hands-on experience in Linux systems and cloud environments.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2020</div>
+                <div class="timeline-content">
+                    <span class="tag">Healthcare</span>
+                    <h3><i class="fas fa-stethoscope"></i> Clinical Engineer</h3>
+                    <p>Worked as Clinical Engineer in healthcare, enhancing problem-solving abilities and attention to detail.</p>
+                </div>
+            </div>
         </div>
-        <!-- CCNA Certificate (2025, left) -->
-        <div class="timeline-event left">
-          <div class="timeline-badge"><i class="fa-solid fa-network-wired"></i></div>
-          <div class="timeline-year">2025</div>
-          <div class="timeline-event-content">
-            <span class="tag">Networking</span>
-            <h3><i class="fa-solid fa-certificate"></i>CCNA Certificate</h3>
-            <p>
-              Completed my CCNA (CISCO) Certificate for completing CCNA_1 (Introduction to networks).
-            </p>
-          </div>
-        </div>
-        <!-- AWS AI/ML (2024, right) -->
-        <div class="timeline-event right">
-          <div class="timeline-badge"><i class="fa-solid fa-brain"></i></div>
-          <div class="timeline-year">2024</div>
-          <div class="timeline-event-content">
-            <span class="tag">AI/ML</span>
-            <h3><i class="fa-brands fa-aws"></i>AWS AI/ML</h3>
-            <p>
-              Completed the AWS AI/ML Foundations course, gaining foundational knowledge in artificial intelligence and machine learning concepts and applications on AWS.
-            </p>
-          </div>
-        </div>
-        <!-- LPIC-1 Certification (2023, left) -->
-        <div class="timeline-event left">
-          <div class="timeline-badge"><i class="fa-brands fa-linux"></i></div>
-          <div class="timeline-year">2023</div>
-          <div class="timeline-event-content">
-            <span class="tag">Linux</span>
-            <h3><i class="fa-brands fa-linux"></i>LPIC-1 Certification</h3>
-            <p>
-              Earned Linux Professional Institute Certification (LPIC-1), demonstrating proficiency in Linux system administration and troubleshooting.
-            </p>
-          </div>
-        </div>
-        <!-- AWS re/Start Graduate (2023, right) -->
-        <div class="timeline-event right">
-          <div class="timeline-badge"><i class="fa-brands fa-aws"></i></div>
-          <div class="timeline-year">2023</div>
-          <div class="timeline-event-content">
-            <span class="tag">Cloud</span>
-            <h3><i class="fa-brands fa-aws"></i>AWS re/Start Graduate</h3>
-            <p>
-              Graduated from the AWS re/Start program, gaining invaluable cloud computing skills in understanding the core AWS services and the role of a Solutions Architect.
-            </p>
-          </div>
-        </div>
-        <!-- Second IT Internship (2023, left) -->
-        <div class="timeline-event left">
-          <div class="timeline-badge"><i class="fa-solid fa-user-tie"></i></div>
-          <div class="timeline-year">2023</div>
-          <div class="timeline-event-content">
-            <span class="tag">Internship</span>
-            <h3><i class="fa-solid fa-user-tie"></i>Solutions Architect @ Praesignis</h3>
-            <p>
-              Completed a second internship as a Solutions Architect at Praesignis, focusing on AWS cloud solutions and infrastructure design.
-            </p>
-          </div>
-        </div>
-        <!-- AWS Cloud Practitioner (2022, right) -->
-        <div class="timeline-event right">
-          <div class="timeline-badge"><i class="fa-brands fa-aws"></i></div>
-          <div class="timeline-year">2022</div>
-          <div class="timeline-event-content">
-            <span class="tag">Cloud</span>
-            <h3><i class="fa-brands fa-aws"></i>AWS Cloud Practitioner</h3>
-            <p>
-              Achieved AWS Certified Cloud Practitioner, establishing a solid understanding of AWS cloud services and their applications.
-            </p>
-          </div>
-        </div>
-        <!-- First IT Internship (2021, left) -->
-        <div class="timeline-event left">
-          <div class="timeline-badge"><i class="fa-solid fa-user-graduate"></i></div>
-          <div class="timeline-year">2021</div>
-          <div class="timeline-event-content">
-            <span class="tag">Internship</span>
-            <h3><i class="fa-solid fa-user-graduate"></i>First IT Internship @ Xgile I.T</h3>
-            <p>
-              Gaining exposure and hands-on experience in Linux systems and cloud environments.
-            </p>
-          </div>
-        </div>
-        <!-- Clinical Engineer(2020, right) -->
-        <div class="timeline-event right">
-          <div class="timeline-badge"><i class="fa-solid fa-stethoscope"></i></div>
-          <div class="timeline-year">2020</div>
-          <div class="timeline-event-content">
-            <span class="tag">Healthcare</span>
-            <h3><i class="fa-solid fa-stethoscope"></i>Healthcare | Clinical - Engineer [Career End]</h3>
-            <p>
-              Worked as a Clinical Engineer, applying technical skills in a healthcare setting, which enhanced my problem-solving abilities and attention to detail.
-            </p>
-          </div>
-        </div>
-      </div>
-      <a class="btn home-btn" href="index.html">&#8592; Return Home</a>
+        
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
     </div>
-  </div>
 </body>
 </html>

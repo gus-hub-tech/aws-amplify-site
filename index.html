@@ -4,12 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to my landing page!</title>
+  <title>Gustav V. Kiewiets | Cloud Computing Professional</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <style>
-
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -17,59 +15,90 @@
     <div class="logo">Cloud<span> Evangelist</span></div>
     <nav>
       <ul>
-        <li>
-          <div style="text-align:center;"></div>
         <li><a href="about.html"><i class="fa-solid fa-user"></i> About</a></li>
         <li><a href="qualifications.html"><i class="fa-solid fa-graduation-cap"></i> Qualifications</a></li>
         <li><a href="tools&platforms.html"><i class="fa-solid fa-toolbox"></i> Tools & Platforms</a></li>
-        <li><a href="recommendations.html"><i class="fa-solid fa-envelope-open-text"></i> Recommendation Letters</a></li>
+        <li><a href="recommendations.html"><i class="fa-solid fa-envelope-open-text"></i> Recommendations</a></li>
+        <li><a href="location.html"><i class="fa-solid fa-map-marker-alt"></i> Location</a></li>
       </ul>
     </nav>
   </header>
+
   <section class="hero">
     <div class="hero-content">
-      <h2>Hello & Welcome,It's</h2>
+      <h2>Hello & Welcome, I'm</h2>
       <h1>Gustav V. Kiewiets</h1>
       <h3>
-        <span style="color:#fff;">I'm a</span>
-        <span class="rotating-titles">
-          <span class="rotating-highlight" style="color:#00fff7;">Linux Network Administrator</span>
-          <span class="rotating-highlight" style="color:#00fff7;">Solutions Architect</span>
+        I'm a <span class="rotating-titles">
+          <span class="rotating-highlight">Linux Network Administrator</span>
+          <span class="rotating-highlight">Solutions Architect</span>
+          <span class="rotating-highlight">Cloud Computing Professional</span>
+          <span class="rotating-highlight">DevOps Engineer</span>
         </span>
       </h3>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="number">5+</span>
+          <span class="label">Years Experience</span>
+        </div>
+        <div class="stat">
+          <span class="number">15+</span>
+          <span class="label">AWS Services</span>
+        </div>
+        <div class="stat">
+          <span class="number">3</span>
+          <span class="label">Certifications</span>
+        </div>
+      </div>
+
       <div class="social-links">
         <a href="https://www.linkedin.com/in/gus88" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         <a href="https://github.com/gus-hub-tech" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://medium.com/@gustav.kiewiets" title="Medium"><i class="fab-brands fa-medium"></i></a>
-
+        <a href="https://medium.com/@gustav.kiewiets" title="Medium"><i class="fab fa-medium"></i></a>
       </div>
+
       <div class="hero-buttons">
-        <a href="https://gus-resume.s3.af-south-1.amazonaws.com/Gustav+V.+Kiewiets_Resume.pdf"
-          class="btn-primary">Download Resume</a>
-        <a href="contact.html" class="btn-primary">
-          <i class="fa-solid fa-envelope"></i> Contact
+        <a href="https://gus-resume.s3.af-south-1.amazonaws.com/Gustav+V.+Kiewiets_Resume.pdf" class="btn-primary">
+          <i class="fa-solid fa-download"></i> Download Resume
+        </a>
+        <a href="contact.html" class="btn-secondary">
+          <i class="fa-solid fa-envelope"></i> Contact Me
         </a>
       </div>
     </div>
-    <div class="hero-image-container">
-      <div class="hero-image-circle">
-        <img src="images/Gustav V. Kiewiets.jpg" alt="Gustav V. Kiewiets" />
-      </div>
+
+    <div class="hero-image">
+      <img src="images/Gustav V. Kiewiets.jpg" alt="Gustav V. Kiewiets" />
     </div>
   </section>
+
   <script>
-    const titles = document.querySelectorAll('.rotating-titles span');
-    let current = 0;
-    function showTitle(idx) {
-      titles.forEach((el, i) => {
-        el.classList.toggle('active', i === idx);
-      });
-    }
-    showTitle(current);
-    setInterval(() => {
-      current = (current + 1) % titles.length;
-      showTitle(current);
-    }, 2000); // Change every 2 seconds
+    // Rotating titles
+    document.addEventListener('DOMContentLoaded', function() {
+      const titles = document.querySelectorAll('.rotating-titles .rotating-highlight');
+      let current = 0;
+      
+      function showTitle(idx) {
+        titles.forEach((el, i) => {
+          el.classList.remove('active');
+          if (i === idx) {
+            el.classList.add('active');
+          }
+        });
+      }
+      
+      // Initialize first title
+      if (titles.length > 0) {
+        showTitle(0);
+        
+        // Start rotation
+        setInterval(() => {
+          current = (current + 1) % titles.length;
+          showTitle(current);
+        }, 3000);
+      }
+    });
   </script>
 </body>
 

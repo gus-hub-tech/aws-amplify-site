@@ -1,159 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Letters of Recommendation</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recommendations | Gustav V. Kiewiets</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: #f4f6fa;
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
             margin: 0;
             padding: 0;
+            color: #fff;
+            min-height: 100vh;
         }
+        
         .container {
-            max-width: 1100px;
-            margin: 40px auto;
+            max-width: 900px;
+            margin: 60px auto;
             padding: 20px;
-            text-align: center; /* Add this line */
         }
+        
         h1 {
             text-align: center;
-            color: #2c3e50;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            background: linear-gradient(45deg, #00fff7, #00ff7f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        nav {
-            width: 100%;
-            background: #fff;
-            box-shadow: 0 2px 8px rgba(44,62,80,0.05);
-            margin-bottom: 30px;
-        }
-        nav ul {
-            display: flex;
-            justify-content: center;
+        
+        .recommendations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 30px;
-            list-style: none;
+            margin-bottom: 40px;
+        }
+        
+        .recommendation-card {
+            background: rgba(24, 24, 24, 0.9);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            border: 1px solid rgba(0, 255, 247, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 255, 247, 0.1);
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .recommendation-card:hover {
+            border-color: #00fff7;
+            transform: translateY(-5px);
+            box-shadow: 0 25px 70px rgba(0, 255, 247, 0.2);
+        }
+        
+        .recommender-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .recommender-avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #00fff7, #00ff7f);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #111;
+            font-weight: 700;
+        }
+        
+        .recommender-details h3 {
+            color: #00fff7;
+            margin: 0 0 5px 0;
+            font-size: 1.2rem;
+        }
+        
+        .recommender-details p {
+            color: #ccc;
             margin: 0;
-            padding: 16px 0;
+            font-size: 0.9rem;
         }
-        nav a {
-            color: #2980b9;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.05rem;
-        }
-        nav a:hover {
-            color: #1c5d8c;
-        }
-        .recommendations {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-        @media (max-width: 900px) {
-            .recommendations {
-                flex-direction: column;
-                align-items: center;
-            }
-            .card {
-                width: 95%;
-                max-width: 420px;
-            }
-        }
-        .card {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 16px rgba(44,62,80,0.08);
-            padding: 30px 24px 20px 24px;
-            width: 420px;
-            max-width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            position: relative;
-        }
-        .card h2 {
-            margin-top: 0;
-            color: #34495e;
-        }
-        .card p {
-            color: #555;
-            line-height: 1.6;
-        }
-        .buttons {
-            margin-top: 24px;
-            display: flex;
-            gap: 12px;
-        }
-        .btn {
-            background: #2980b9;
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            padding: 10px 18px;
+        
+        .recommendation-text {
+            color: #ccc;
+            line-height: 1.7;
             font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.2s;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(45deg, #00fff7, #00ff7f);
+            color: #111;
             text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
         }
-        .btn:hover, .btn:focus {
-            background: #1c5d8c;
-            outline: 2px solid #1c5d8c;
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 255, 247, 0.3);
         }
-        .home-btn {
-            display: inline-block; /* Changed from block */
-            margin: 40px auto 0 auto;
-            background: #27ae60;
-            /* Optionally, adjust padding if needed */
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(45deg, #00fff7, #00ff7f);
+            color: #111;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 30px;
         }
-        .home-btn:hover, .home-btn:focus {
-            background: #1e8747;
-            outline: 2px solid #1e8747;
+        
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 255, 247, 0.3);
         }
-        .view-link {
-            margin-top: 10px;
-            color: #2980b9;
-            text-decoration: underline;
-            font-size: 0.98rem;
-            cursor: pointer;
-        }
-        .view-link:hover, .view-link:focus {
-            color: #1c5d8c;
-            outline: 2px solid #1c5d8c;
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 40px auto;
+                padding: 15px;
+            }
+            
+            .recommendations-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .recommendation-card {
+                padding: 25px 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <h1>Letters of Recommendation</h1>
-        <section class="recommendations">
-            <article class="card">
-                <h2>Recommendation from Senior Solutions Architect Yusuf Mayet - AWS</h2>
-                <p>
-                    I am pleased to recommend Gustav for your company. He has consistently demonstrated exceptional skills in problem-solving, teamwork, and leadership throughout his time under my metorship. His dedication and passion for learning set him apart from his peers.
-                </p>
-                
-                <div class="buttons">
-                    <a class="btn" href="https://gus-resume.s3.af-south-1.amazonaws.com/Senior+Solutions+Architect++AWS+Recommendation.pdf" download aria-label="Download Yusuf Mayet recommendation as PDF">Download PDF</a>
-                    
+        <h1>Professional Recommendations</h1>
+        
+        <div class="recommendations-grid">
+            <div class="recommendation-card">
+                <div class="recommender-info">
+                    <div class="recommender-avatar">YM</div>
+                    <div class="recommender-details">
+                        <h3>Yusuf Mayet</h3>
+                        <p>Senior Solutions Architect - AWS</p>
+                    </div>
                 </div>
-            </article>
-            <article class="card">
-                <h2>Recommendation from Director Siddharth Chetan - Vagmine Tech IT </h2>
-                <p>
-                    Gustav is an outstanding individual with a strong work ethic and a keen intellect. His contributions to our research projects have been invaluable, and I am confident he will excel in any endeavor he pursues.
-                </p>
-                
-                <div class="buttons">
-                    <a class="btn" href="https://gus-resume.s3.af-south-1.amazonaws.com/Vagmine+Tech+IT+Recommendation.pdf" download aria-label="Download Siddharth Chetan recommendation as PDF">Download PDF</a>
-                    
+                <div class="recommendation-text">
+                    "I am pleased to recommend Gustav for your company. He has consistently demonstrated exceptional skills in problem-solving, teamwork, and leadership throughout his time under my mentorship. His dedication and passion for learning set him apart from his peers."
                 </div>
-            </article>
-        </section>
-        <a class="btn home-btn" href="index.html">&#8592;Return Home</a>
+                <a href="https://gus-resume.s3.af-south-1.amazonaws.com/Senior+Solutions+Architect++AWS+Recommendation.pdf" 
+                   class="download-btn" download>
+                    <i class="fas fa-download"></i>
+                    Download PDF
+                </a>
+            </div>
+            
+            <div class="recommendation-card">
+                <div class="recommender-info">
+                    <div class="recommender-avatar">SC</div>
+                    <div class="recommender-details">
+                        <h3>Siddharth Chetan</h3>
+                        <p>Director - Vagmine Tech IT</p>
+                    </div>
+                </div>
+                <div class="recommendation-text">
+                    "Gustav is an outstanding individual with a strong work ethic and a keen intellect. His contributions to our research projects have been invaluable, and I am confident he will excel in any endeavor he pursues."
+                </div>
+                <a href="https://gus-resume.s3.af-south-1.amazonaws.com/Vagmine+Tech+IT+Recommendation.pdf" 
+                   class="download-btn" download>
+                    <i class="fas fa-download"></i>
+                    Download PDF
+                </a>
+            </div>
+        </div>
+        
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
     </div>
 </body>
 </html>

@@ -1,259 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tools & Platforms | Gustav V. Kiewiets</title>
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-  <style>
-    body {
-      background: #f4f6fa;
-      color: #fff;
-      font-family: 'Poppins', Arial, sans-serif;
-      margin: 0;
-      min-height: 100vh;
-      padding: 0;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 20px;
-      text-align: center;
-    }
-    h1 {
-      text-align: center;
-      color: #00fff7;
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 2.5rem;
-      letter-spacing: 1px;
-      text-shadow: 0 2px 12px #00fff799;
-      text-transform: uppercase;
-    }
-    nav {
-      width: 100%;
-      background: #222;
-      box-shadow: 0 2px 8px rgba(0,255,247,0.05);
-      margin-bottom: 30px;
-    }
-    nav ul {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      list-style: none;
-      margin: 0;
-      padding: 16px 0;
-    }
-    nav a {
-      color: #00fff7;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.05rem;
-      transition: color 0.2s;
-    }
-    nav a:hover {
-      color: #fff;
-    }
-    .tools-sections {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2.5rem;
-      justify-content: center;
-      align-items: flex-start;
-    }
-    .tools-block {
-      flex: 1 1 340px;
-      min-width: 300px;
-      max-width: 420px;
-      display: flex;
-      flex-direction: column;
-    }
-    .tools-grid {
-      display: grid !important;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.2rem;
-      width: 100%;
-    }
-    .tool-box {
-      background: #222;
-      border-radius: 10px;
-      padding: 1.5rem 1rem;
-      min-width: 0;
-      max-width: 100%;
-      text-align: center;
-      box-shadow: 0 0 12px #00fff733;
-      transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
-      border: 2px solid transparent;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 120px;
-      color: #fff;
-    }
-    .tool-box:hover {
-      transform: translateY(-8px) scale(1.04);
-      box-shadow: 0 0 24px #00fff7cc;
-      border: 2px solid #00fff7;
-      color: #00fff7;
-    }
-    .tool-box i {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
-      color: #00fff7;
-      transition: color 0.2s, text-shadow 0.2s;
-    }
-    .tool-box:hover i {
-      color: #00fff7;
-      text-shadow: 0 0 8px #00fff7cc;
-    }
-    .tool-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.2rem;
-      color: inherit;
-    }
-    .tool-type {
-      font-size: 0.95rem;
-      color: #00fff7;
-      margin-bottom: 0;
-      display: block;
-    }
-    .btn {
-      background: #2980b9;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      padding: 10px 18px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.2s;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn:hover, .btn:focus {
-      background: #1c5d8c;
-      outline: 2px solid #1c5d8c;
-    }
-    .home-btn {
-      display: inline-block; /* Change from block to inline-block */
-      margin: 40px auto 0 auto;
-      background: #27ae60;
-      /* Remove width and max-width if you have them */
-    }
-    .home-btn:hover, .home-btn:focus {
-      background: #1e8747;
-      outline: 2px solid #1e8747;
-    }
-    @media (max-width: 900px) {
-      .tools-sections {
-        flex-direction: column;
-        gap: 2rem;
-        align-items: stretch;
-      }
-      .tools-block {
-        max-width: 100%;
-      }
-      .tools-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    @media (max-width: 600px) {
-      .tools-grid {
-        grid-template-columns: 1fr;
-      }
-      .tool-box {
-        height: auto;
-        padding: 1.2rem 0.7rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tools & Platforms | Gustav V. Kiewiets</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            background: linear-gradient(45deg, #00fff7, #00ff7f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .tools-section {
+            background: rgba(24, 24, 24, 0.9);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            border: 1px solid rgba(0, 255, 247, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 255, 247, 0.1);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            color: #00fff7;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .tool-card {
+            background: rgba(34, 34, 34, 0.8);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(0, 255, 247, 0.2);
+            transition: all 0.3s ease;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        .tool-card:hover {
+            border-color: #00fff7;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 255, 247, 0.2);
+        }
+        
+        .tool-card i {
+            font-size: 2.5rem;
+            color: #00fff7;
+            margin-bottom: 15px;
+        }
+        
+        .tool-card h3 {
+            color: #fff;
+            margin: 0 0 5px 0;
+            font-size: 1.2rem;
+        }
+        
+        .tool-card p {
+            color: #ccc;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(45deg, #00fff7, #00ff7f);
+            color: #111;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+        
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 255, 247, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 40px auto;
+                padding: 15px;
+            }
+            
+            .tools-section {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .tools-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <div class="container">
-    <h1>Tools & Platforms</h1>
-    <div class="tools-sections">
-      <!-- Tools Section -->
-      <div class="tools-block">
-        <h2 style="color:#00fff7; text-align:center; margin-bottom:1.2rem; letter-spacing:1px;">Tools</h2>
-        <div class="tools-grid">
-          <div class="tool-box">
-            <i class="fab fa-github"></i>
-            <div class="tool-title">GitHub</div>
-            <span class="tool-type">Version Control</span>
-          </div>
-          <div class="tool-box">
-            <i class="fab fa-git-alt"></i>
-            <div class="tool-title">Git</div>
-            <span class="tool-type">Version Control</span>
-          </div>
-          <div class="tool-box">
-            <i class="fab fa-python"></i>
-            <div class="tool-title">Python</div>
-            <span class="tool-type">Programming Language</span>
-          </div>
-          <div class="tool-box">
-            <i class="fab fa-docker"></i>
-            <div class="tool-title">Docker</div>
-            <span class="tool-type">Containerization</span>
-          </div>
-          <div class="tool-box">
-            <i class="fab fa-slack"></i>
-            <div class="tool-title">Slack</div>
-            <span class="tool-type">Collaboration</span>
-          </div>
-          <div class="tool-box">
-            <i class="fa-brands fa-terraform"></i>
-            <div class="tool-title">Terraform</div>
-            <span class="tool-type">IaC</span>
-          </div>
-          <div class="tool-box">
-            <i class="fab fa-react"></i>
-            <div class="tool-title">React</div>
-            <span class="tool-type">Frontend Framework</span>
-          </div>
-          <div class="tool-box">
-            <i class="fa-brands fa-python"></i>
-            <div class="tool-title">Django</div>
-            <span class="tool-type">Web Framework</span>
-          </div>
+    <div class="container">
+        <h1>Tools & Platforms</h1>
+        
+        <div class="tools-section">
+            <h2 class="section-title">Development Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <i class="fab fa-python"></i>
+                    <h3>Python</h3>
+                    <p>Programming Language</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fab fa-git-alt"></i>
+                    <h3>Git</h3>
+                    <p>Version Control</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                    <p>Code Repository</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fab fa-docker"></i>
+                    <h3>Docker</h3>
+                    <p>Containerization</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Terraform</h3>
+                    <p>Infrastructure as Code</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fab fa-js-square"></i>
+                    <h3>JavaScript</h3>
+                    <p>Web Development</p>
+                </div>
+            </div>
         </div>
-      </div>
-      <!-- Platforms Section -->
-      <div class="tools-block">
-        <h2 style="color:#00fff7; text-align:center; margin-bottom:1.2rem; letter-spacing:1px;">Platforms</h2>
-        <div class="tools-grid">
-          <div class="tool-box">
-            <i class="fab fa-aws"></i>
-            <div class="tool-title">AWS</div>
-            <span class="tool-type">Cloud Platform</span>
-          </div>
-          <div class="tool-box">
-            <i class="fab fa-linux"></i>
-            <div class="tool-title">Linux</div>
-            <span class="tool-type">Operating System</span>
-          </div>
-          <div class="tool-box">
-            <i class="fab fa-ubuntu"></i>
-            <div class="tool-title">Ubuntu</div>
-            <span class="tool-type">Linux Distro</span>
-          </div>
-          <div class="tool-box">
-            <i class="fab fa-windows"></i>
-            <div class="tool-title">Windows</div>
-            <span class="tool-type">Operating System</span>
-          </div>
-          <div class="tool-box">
-            <i class="fab fa-node-js"></i>
-            <div class="tool-title">Node.js</div>
-            <span class="tool-type">Runtime</span>
-          </div>
+        
+        <div class="tools-section">
+            <h2 class="section-title">Cloud Platforms</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <i class="fab fa-aws"></i>
+                    <h3>AWS</h3>
+                    <p>Cloud Platform</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fab fa-linux"></i>
+                    <h3>Linux</h3>
+                    <p>Operating System</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fab fa-ubuntu"></i>
+                    <h3>Ubuntu</h3>
+                    <p>Linux Distribution</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-server"></i>
+                    <h3>EC2</h3>
+                    <p>Virtual Servers</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-database"></i>
+                    <h3>RDS</h3>
+                    <p>Database Service</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-cloud"></i>
+                    <h3>S3</h3>
+                    <p>Object Storage</p>
+                </div>
+            </div>
         </div>
-      </div>
+        
+        <div class="tools-section">
+            <h2 class="section-title">Collaboration Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <i class="fab fa-slack"></i>
+                    <h3>Slack</h3>
+                    <p>Team Communication</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>Jira</h3>
+                    <p>Project Management</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Teams</h3>
+                    <p>Video Conferencing</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-terminal"></i>
+                    <h3>SSH</h3>
+                    <p>Remote Access</p>
+                </div>
+            </div>
+        </div>
+        
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
     </div>
-    <a class="btn home-btn" href="index.html">&#8592; Return Home</a>
-  </div>
 </body>
 </html>

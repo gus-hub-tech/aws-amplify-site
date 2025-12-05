@@ -1,41 +1,77 @@
-# gus-amplify-website | portfolio
+# AWS-Amplify-Portfolio
 
-## 🌐 About Me
+## 🌐 About This Project
 
-Hello! & Welcome to my portfolio! I'm a passionate Linux Network Administrator and Solutions Architect with a deep interest in designing robust, secure, and scalable infrastructure solutions. My portfolio highlights skills, projects and hands-on experience with modern networking, Linux system management, automation, and web development.
-
----
-
-## 🛠️ Technologies Used
-
-This repository leverages the following technologies:
-
-- **AWS Services**: Amplify, ApiGateway,Lambda, SNS. 
-- **CSS**: Custom styles for responsive and visually appealing layouts.
-- **JavaScript**: Interactive features and dynamic content.
-- **HTML**: Semantic and accessible markup for web pages.
+A modern, responsive portfolio website showcasing my journey as a Cloud Computing Professional with expertise in AWS services and Linux systems administration. This single-page application highlights my transition from healthcare to IT, technical skills, certifications, and professional experience in cloud technologies.
 
 ---
 
-## 📁 Repository Structure
+## 🛠️ Technologies & Architecture
+
+This portfolio is built using modern web technologies and AWS cloud services:
+
+### Frontend Technologies
+- **HTML5**: Semantic markup with accessibility features
+- **CSS3**: Custom responsive design with modern animations and effects
+- **Vanilla JavaScript**: Interactive elements including rotating titles and form handling
+- **Font Awesome**: Professional iconography throughout the site
+
+### AWS Cloud Services
+- **AWS Amplify**: Static web hosting and continuous deployment
+- **API Gateway**: RESTful API endpoint for contact form
+- **AWS Lambda**: Serverless function for email processing
+- **Amazon SES**: Email service for contact form submissions
+- **S3**: Resume file hosting and storage
+
+### Design Features
+- **Responsive Design**: Mobile-first approach with breakpoints for all devices
+- **Modern UI/UX**: Dark theme with cyan accent colors and smooth animations
+- **Interactive Elements**: Hover effects, rotating job titles, and dynamic content
+- **Professional Layout**: Clean, minimalist design focused on content
+
+---
+
+## 📁 Project Structure
 
 ```
 .
-├── assets/          # Images, icons, and other static assets
-├── css/             # CSS and SCSS stylesheets
-├── js/              # JavaScript files for interactivity
-├── index.html       # Main landing page
-└── ...              # Additional pages and configuration files
+├── images/                    # Profile photos and background images
+│   ├── Gustav V. Kiewiets.jpg # Professional headshot
+│   └── Laptop.jpg            # Hero section background
+├── about.html                # About me page with interests and background
+├── contact.html              # Contact form with AWS integration
+├── index.html                # Main landing page
+├── location.html             # Location/availability information
+├── qualifications.html       # Education and certifications
+├── recommendations.html      # Professional recommendations
+├── tools&platforms.html      # Technical skills and tools
+├── style.css                 # Main stylesheet with responsive design
+└── README.md                 # Project documentation
 ```
 
 ---
 
-## 🚀 Features
+## 🚀 Key Features
 
-- **Responsive Portfolio Website**: Showcases professional skills, certifications, and project highlights.
-- **Modern Web Design**: Clean, accessible, and aesthetically pleasing interface.
-- **Custom Styling**: Utilizes SCSS for maintainable and scalable styles.
-- **Interactive Elements**: Engaging JavaScript-driven features.
+### Core Functionality
+- **Multi-page Portfolio**: Comprehensive sections covering all professional aspects
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+- **Interactive Contact Form**: Direct integration with AWS services for email delivery
+- **Professional Resume**: Direct download link hosted on AWS S3
+- **Social Media Integration**: Links to LinkedIn, GitHub, and Medium profiles
+
+### Technical Highlights
+- **Serverless Architecture**: Contact form powered by AWS Lambda and API Gateway
+- **Modern CSS**: Flexbox layouts, CSS Grid, and smooth transitions
+- **Vanilla JavaScript**: No framework dependencies for fast loading
+- **SEO Optimized**: Semantic HTML structure and meta tags
+- **Accessibility**: ARIA labels and keyboard navigation support
+
+### Interactive Elements
+- **Rotating Job Titles**: Dynamic text animation on the hero section
+- **Hover Effects**: Interactive interest boxes with detailed descriptions
+- **Form Validation**: Client-side and server-side validation for contact form
+- **Smooth Animations**: CSS transitions and transforms for enhanced UX
 
 ---
 
@@ -45,39 +81,144 @@ https://github.com/user-attachments/assets/036113ef-e119-4c1f-88e8-602a68aeb513
 
 ---
 
-## 📝 Getting Started
+## 🌐 Live Demo
 
-You can view the live portfolio at [gus-amplify-site](https://main.d3d5cnpn2eqq65.amplifyapp.com)
+**Portfolio Website**: [https://main.d3d5cnpn2eqq65.amplifyapp.com](https://main.d3d5cnpn2eqq65.amplifyapp.com)
 
-To run locally:
+---
 
-1. **Clone the repo**
-    ```bash
-    git clone https://github.com/gus-hub-tech/gus-amplify-site.git
-    cd gus-amplify-site
-    ```
+## 🚀 Local Development
 
-2. **Open `index.html` in your browser**  
-   No build steps required – the site runs as static files.
+### Prerequisites
+- Modern web browser (Chrome, Firefox, Safari, Edge)
+- Local web server (optional, for testing contact form)
+
+### Quick Start
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/gus-hub-tech/gus-amplify-site.git
+   cd gus-amplify-site
+   ```
+
+2. **Open in browser**
+   ```bash
+   # Option 1: Direct file access
+   open index.html
+   
+   # Option 2: Local server (recommended)
+   python -m http.server 8000
+   # Then visit http://localhost:8000
+   ```
+
+### Development Notes
+- **No Build Process**: Pure HTML/CSS/JS - no compilation required
+- **Static Files**: All assets are self-contained
+- **Contact Form**: Requires AWS services for full functionality
+- **Responsive Testing**: Use browser dev tools to test different screen sizes
+
+---
+
+## 🏗️ AWS Infrastructure
+
+### Contact Form Architecture
+```
+Contact Form → API Gateway → Lambda Function → Amazon SES → Email Delivery
+```
+
+### Services Configuration
+- **API Gateway**: RESTful endpoint at `https://tmlwb24aff.execute-api.af-south-1.amazonaws.com/Production_Stage/SendMailFunctionSES`
+- **Lambda Function**: Processes form data and sends emails via SES
+- **S3 Bucket**: Hosts resume PDF with public read access
+- **Amplify**: Continuous deployment from GitHub repository
+
+---
+
+## 📱 Responsive Breakpoints
+
+- **Desktop**: 1200px and above
+- **Tablet**: 900px - 1199px
+- **Mobile Large**: 600px - 899px
+- **Mobile Small**: Below 600px
+
+---
+
+## 🎨 Design System
+
+### Color Palette
+- **Primary**: `#00fff7` (Cyan)
+- **Background**: `#111` (Dark Gray)
+- **Text**: `#fff` (White)
+- **Accent**: `#00ff7f` (Green)
+- **Secondary**: `#2980b9` (Blue)
+
+### Typography
+- **Primary Font**: Poppins (Google Fonts)
+- **Fallback**: Arial, sans-serif
+- **Icon Font**: Font Awesome 6.0+
+
+---
+
+## 🔧 Technical Implementation
+
+### Contact Form Integration
+The contact form uses a serverless architecture:
+
+```javascript
+// Form submission to AWS API Gateway
+const payload = {
+  "name": name,
+  "email": email,
+  "message": message
+};
+
+fetch(apiEndpoint, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(payload)
+});
+```
+
+### Performance Optimizations
+- **Minimal Dependencies**: Only Font Awesome for icons
+- **Optimized Images**: Compressed profile and background images
+- **Efficient CSS**: Single stylesheet with mobile-first approach
+- **Fast Loading**: No external frameworks or heavy libraries
 
 ---
 
 ## 🤝 Contributing
 
-Contributions, suggestions, and improvements are welcome!  
-Feel free to open issues or submit pull requests.
+Contributions and suggestions are welcome! Please feel free to:
+
+- Report bugs or issues
+- Suggest new features or improvements
+- Submit pull requests for enhancements
+- Provide feedback on design or functionality
+
+### Development Guidelines
+- Maintain responsive design principles
+- Follow existing code style and structure
+- Test across multiple browsers and devices
+- Ensure accessibility standards are met
 
 ---
 
-## 📬 Contact
+## 📬 Contact & Connect
 
-- **Email**: gustav.kiewiets@hotmail.com
-- **LinkedIn**: www.linkedin.com/in/gus88
-- **Amplify-Website**: [gus-amplify-site](https://main.d3d5cnpn2eqq65.amplifyapp.com)
+- **📧 Email**: [gustav.kiewiets@hotmail.com](mailto:gustav.kiewiets@hotmail.com)
+- **💼 LinkedIn**: [linkedin.com/in/gus88](https://www.linkedin.com/in/gus88)
+- **🐙 GitHub**: [github.com/gus-hub-tech](https://github.com/gus-hub-tech)
+- **📝 Medium**: [medium.com/@gustav.kiewiets](https://medium.com/@gustav.kiewiets)
+- **🌐 Portfolio**: [Live Website](https://main.d3d5cnpn2eqq65.amplifyapp.com)
 
 ---
 
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
 ---
 
-**Thank you for visiting my portfolio!**
+**Thank you for exploring my portfolio! 🚀**
 
