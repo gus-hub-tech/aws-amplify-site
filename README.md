@@ -253,7 +253,6 @@ Contributions and suggestions are welcome! Please feel free to:
 - **💼 LinkedIn**: [linkedin.com/in/gus88](https://www.linkedin.com/in/gus88)
 - **🐙 GitHub**: [github.com/gus-hub-tech](https://github.com/gus-hub-tech)
 - **📝 Medium**: [medium.com/@gustav.kiewiets](https://medium.com/@gustav.kiewiets)
-- **🌐 Portfolio**: [Live Website](https://main.d3d5cnpn2eqq65.amplifyapp.com)
 
 ---
 
