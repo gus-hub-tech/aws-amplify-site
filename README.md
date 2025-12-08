@@ -2,7 +2,7 @@
 
 ## 🌐 About This Project
 
-A modern, responsive portfolio website showcasing my journey as a Cloud Computing Professional with expertise in AWS services and Linux systems administration. This multi-page application highlights my transition from healthcare to IT, technical skills, certifications, and professional experience in cloud technologies.
+A modern, responsive portfolio website showcasing my journey as a Cloud Computing Professional.This multi-page application highlights my technical skills, certifications, and professional experience in cloud technologies.
 
 ---
 
@@ -135,7 +135,6 @@ User Form → API Gateway → Lambda Function → Amazon SES → Email Delivery
 - **AWS Lambda**: Serverless function processing form data
 - **Amazon SES**: Email service for contact form delivery
 - **S3 Bucket**: File storage for resume and recommendation PDFs
-- **Route 53**: DNS management (if custom domain used)
 
 ### Deployment Pipeline
 1. Code push to GitHub repository
@@ -232,7 +231,6 @@ document.getElementById('contactForm').addEventListener('submit', async function
 
 Contributions and suggestions are welcome! Please feel free to:
 
-- Report bugs or issues
 - Suggest new features or improvements
 - Submit pull requests for enhancements
 - Provide feedback on design or functionality
